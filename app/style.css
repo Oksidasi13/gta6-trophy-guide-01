@@ -1,0 +1,97 @@
+/* GTA VI Trophy Guide — original look, system fonts only, no images, fully offline. */
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #0d0b16; color: #f2eef7;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+.top {
+  display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: end;
+  padding: 20px 24px 14px;
+  background: linear-gradient(120deg, #2b0f3a 0%, #123a4d 55%, #0d0b16 100%);
+  border-bottom: 3px solid #ff7ad9;
+}
+.brand h1 { margin: 0; font-size: 30px; letter-spacing: .5px; }
+.brand .sub { margin: 6px 0 0; max-width: 640px; color: #d9cfee; font-size: 14px; }
+.progress { min-width: 260px; }
+.bigcount { font-size: 30px; font-weight: 800; }
+.bigcount .of { font-size: 16px; font-weight: 600; color: #cdbfe8; }
+.bar { height: 12px; background: #241d33; border-radius: 6px; overflow: hidden; margin-top: 6px; }
+.fill { height: 100%; background: linear-gradient(90deg, #ff7ad9, #39d0c4); transition: width .3s; }
+.grade-line { margin: 6px 0 0; font-size: 13px; color: #cdbfe8; }
+.tabs { display: flex; gap: 8px; padding: 12px 24px 0; flex-wrap: wrap; }
+.tabs button {
+  background: #1b1530; color: #f2eef7; border: 1px solid #4a3a6e; border-radius: 8px 8px 0 0;
+  padding: 9px 16px; font-size: 14px; cursor: pointer;
+}
+.tabs button.active { background: #ff7ad9; color: #1b0b26; border-color: #ff7ad9; font-weight: 700; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center;
+  padding: 12px 24px; background: #171226; border-bottom: 1px solid #332a4d;
+  font-size: 14px;
+}
+.toolbar select, .toolbar input[type="search"] {
+  background: #0d0b16; color: #f2eef7; border: 1px solid #4a3a6e; border-radius: 6px; padding: 6px 8px; font-size: 14px;
+}
+.toolbar input[type="search"] { width: 240px; }
+.check { display: flex; align-items: center; gap: 6px; }
+.spoiler { color: #ffd166; }
+.layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 20px; padding: 16px 24px; align-items: start; }
+.count-line { margin: 0 0 10px; color: #cdbfe8; font-size: 13px; }
+.trophies { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trophy {
+  display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; align-items: start;
+  background: #1b1530; border: 1px solid #332a4d; border-radius: 10px; padding: 12px 14px; cursor: pointer;
+}
+.trophy:hover { border-color: #ff7ad9; }
+.trophy.selected { border-color: #39d0c4; outline: 2px solid #39d0c4; }
+.trophy.earned { background: #14261f; border-color: #2e6b52; }
+.trophy input { width: 20px; height: 20px; margin-top: 2px; accent-color: #39d0c4; cursor: pointer; }
+.trophy .name { font-weight: 700; font-size: 16px; }
+.trophy .desc { color: #d9cfee; font-size: 14px; margin-top: 2px; }
+.trophy .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tag { font-size: 12px; padding: 2px 8px; border-radius: 20px; background: #2c2145; color: #e6dcff; }
+.tag.missable { background: #5a1f1f; color: #ffd166; font-weight: 700; }
+.tag.count { background: #123a4d; color: #aee8df; }
+.grade { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: capitalize; }
+.dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.dot.platinum { background: radial-gradient(circle at 35% 35%, #ffffff, #b9c4d6); }
+.dot.gold { background: radial-gradient(circle at 35% 35%, #ffe98a, #c9961a); }
+.dot.silver { background: radial-gradient(circle at 35% 35%, #ffffff, #9aa3b2); }
+.dot.bronze { background: radial-gradient(circle at 35% 35%, #f0b184, #8a4f22); }
+.hidden-name { color: #ffd166; font-style: italic; }
+.guide-col {
+  position: sticky; top: 12px; background: #171226; border: 1px solid #4a3a6e;
+  border-radius: 12px; padding: 18px;
+}
+.guide-col h2 { margin: 0 0 4px; font-size: 20px; }
+.guide-col .official { color: #d9cfee; font-size: 14px; }
+.guide-col h3 { margin: 16px 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: #39d0c4; }
+.guide-col p { margin: 4px 0; font-size: 15px; }
+.guide-col ul { margin: 4px 0; padding-left: 18px; font-size: 14px; }
+.guide-col a { color: #7ad9ff; word-break: break-all; }
+.guide-col textarea { width: 100%; min-height: 64px; background: #0d0b16; color: #f2eef7; border: 1px solid #4a3a6e; border-radius: 6px; padding: 8px; font: inherit; font-size: 14px; }
+.guide-col .note-saved { color: #39d0c4; font-size: 13px; }
+.guide-hint { color: #cdbfe8; }
+.view { padding: 8px 24px 24px; }
+.view h2 { font-size: 22px; margin: 12px 0 6px; }
+.view h3 { margin: 18px 0 4px; color: #39d0c4; }
+.stage { background: #1b1530; border: 1px solid #332a4d; border-radius: 10px; padding: 14px 16px; margin: 10px 0; }
+.stage p { margin: 4px 0; }
+.stage .covers { color: #cdbfe8; font-size: 14px; }
+.warn { background: #3a2a10; border: 1px solid #8a6d1a; border-radius: 8px; padding: 10px 14px; font-size: 14px; }
+.save-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 12px 0; }
+button, .import {
+  background: #ff7ad9; color: #1b0b26; border: none; border-radius: 8px;
+  padding: 9px 16px; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.import { background: #1b1530; color: #f2eef7; border: 1px solid #4a3a6e; }
+.import input { display: none; }
+.save-status { color: #39d0c4; min-height: 20px; }
+footer { padding: 16px 24px 28px; color: #9d90b8; font-size: 13px; border-top: 1px solid #332a4d; }
+.empty { color: #ffd166; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .guide-col { position: static; }
+  .toolbar input[type="search"] { width: 100%; }
+}

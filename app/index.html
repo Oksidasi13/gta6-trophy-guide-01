@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — 55 PS5 Trophies to Platinum</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>GTA VI Trophy Guide</h1>
+    <p class="sub">Every PlayStation 5 trophy — guide, tracker &amp; roadmap to platinum. 55 trophies: 1 platinum · 2 gold · 6 silver · 46 bronze. Fully offline.</p>
+  </div>
+  <div class="progress" id="progressBox" aria-live="polite">
+    <div class="bigcount"><span id="earnedCount">0</span><span class="of"> / 55 earned</span></div>
+    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <p class="grade-line" id="gradeLine">0 platinum · 0 gold · 0 silver · 0 bronze</p>
+  </div>
+</header>
+<nav class="tabs" id="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="save">Save &amp; Export</button>
+</nav>
+<section class="toolbar" id="toolbar">
+  <label class="search">Search <input id="search" type="search" placeholder="Trophy name or guide word…" autocomplete="off"></label>
+  <label>Kind <select id="kindFilter"><option value="all">All kinds</option><option value="story">Story</option><option value="stranger">Stranger</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="combat">Combat &amp; heists</option><option value="misc">Misc</option></select></label>
+  <label>Grade <select id="gradeFilter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Status <select id="statusFilter"><option value="all">Earned + unearned</option><option value="earned">Earned only</option><option value="unearned">Unearned only</option></select></label>
+  <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+  <label class="check spoiler"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+</section>
+<main class="layout">
+  <section class="list-col">
+    <p class="count-line" id="countLine">Showing 55 of 55 trophies</p>
+    <ul class="trophies" id="trophyList"></ul>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Clear the search or widen the filters.</p>
+  </section>
+  <aside class="guide-col" id="guidePane" aria-live="polite">
+    <p class="guide-hint">Click a trophy to open its guide here — what to do, when it can be missed, and its sources.</p>
+  </aside>
+</main>
+<section class="view" id="roadmapView" hidden></section>
+<section class="view" id="missablesView" hidden></section>
+<section class="view" id="saveView" hidden>
+  <h2>Save &amp; export your progress</h2>
+  <p>Progress is saved automatically in this browser (localStorage). Export it to a JSON file as a backup, or import a file you exported earlier.</p>
+  <div class="save-actions">
+    <button id="exportBtn" type="button">Export progress (.json)</button>
+    <label class="import">Import progress <input id="importFile" type="file" accept="application/json"></label>
+    <button id="resetBtn" type="button">Reset all progress</button>
+  </div>
+  <p class="save-status" id="saveStatus"></p>
+  <h3>Notes</h3>
+  <p>Add a note to any trophy from its guide pane — a reminder of where you are up to, or which count you are on. Notes are saved with your progress and included in exports.</p>
+</section>
+<footer>
+  <p>Names, descriptions and grades are the official PlayStation trophy list. Guides are our own words, built from the official descriptions and cited beside each trophy; nothing here is verified in the game yet. Missable flags are built from the official descriptions and are not yet verified in-game. No Rockstar logo or official artwork. This guide works fully offline.</p>
+  <p>Sources for the official list: Exophase and PSNProfiles (links beside each trophy's guide).</p>
+</footer>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
